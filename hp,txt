@@ -1,6 +1,0 @@
-        box = cv2.goodFeaturesToTrack(
-            shorts.astype(np.uint8), 
-            maxCorners=4, 
-            minDistance=1, 
-            blockSize=50,
-            qualityLevel=0.0000000000001)
