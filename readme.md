@@ -4,9 +4,9 @@ The task is to find the shaded segmentation mask based on a raw image, human par
 
 ## Algorithm
 1. Place points at a distance from the ankles in the body pose.
-2. Create a convex hull of the shorts and those points.
-3. Add a mask of the legs.  
-4. Subtract masks of the shirt and arms.    
+2. Create a convex hull of the shorts mask and those points.
+3. Add a mask of the legs.
+4. Subtract masks of the shirt and arms.
 5. Subtract a mask below the line between the ankles.
 
 I divided the images into three categories:
@@ -16,7 +16,7 @@ I divided the images into three categories:
 
 To create the masks of the skirts, I decided to use the lower body part mask from human parsing, as it seemed more accurate, although in most cases, the main algorithm also produced good results.
 
-To create masks for images without ankles, I used a convex hull of the shorts mask and two points located away from the edges of the image. This gave good results, although the three images where the skirts hide the ankles were not processed as well.
+To create masks for images without ankles, I used a convex hull of the shorts mask and legs, substracting everything below highest point of feet mask from human parsing.
 
 ## Challenges
 
